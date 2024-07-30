@@ -11,11 +11,12 @@ char    *ft_strrev(char *str)
     {
         length++;
     }
-    while(i < length / 2)
+    length -- ;
+    while(i < length)
     {
         temp = str[i];
-        str[i] = str[length - 1 -i];
-        str[length -1- i] = temp;
+        str[i] = str[length];
+        str[length] = temp;
         i++;
     }
     return(str);

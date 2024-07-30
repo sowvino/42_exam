@@ -1,25 +1,25 @@
 #include <stdio.h>
 
-char    *ft_strrev(char *str)
+char *ft_strrev(char *s)
 {
-    int i;
-    i =0;
-    int length;
-    length = 0;
-    char temp;
-    while(str[length] != '\0')
+    int i = 0;
+    while (s[i] != '\0') // Find the length of the string
     {
-        length++;
-    }
-    length -- ;
-    while(i < length)
-    {
-        temp = str[i];
-        str[i] = str[length];
-        str[length] = temp;
         i++;
     }
-    return(str);
+    i--; // Set i to the last valid index
+
+    int j = 0;
+    char temp;
+    while (j < i)
+    {
+        temp = s[j];
+        s[j] = s[i];
+        s[i] = temp;
+        j++;
+        i--;
+    }
+    return s;
 }
 
 int main()

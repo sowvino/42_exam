@@ -10,6 +10,7 @@ void sort_tab(int *tab,unsigned int size)
             temp = tab[i];
             tab[i] =tab[i+1];
             tab[i + 1] =temp;
+            i =0;
         }
         else
             i++;
